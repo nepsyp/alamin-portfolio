@@ -3,22 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090909">
-<meta name="description" content="AlAMIN — AI & Creative Developer. Exploring artificial intelligence, technology and creative digital experiences.">
-<title>AlAMIN — AI & Creative Developer</title>
+<meta name="theme-color" content="#080817">
+
+<title>AlAMIN | AI & Creative Developer</title>
+<meta name="description" content="AlAMIN — AI & Creative Developer. Exploring artificial intelligence, technology and digital creativity.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg:#090909;
-  --panel:#111111;
-  --orange:#ff792e;
-  --white:#f5f5f5;
-  --muted:#929292;
-  --line:rgba(255,255,255,.09);
+  --bg:#080817;
+  --panel:#101025;
+  --blue:#19c9ff;
+  --purple:#a34dff;
+  --white:#f5f5ff;
+  --muted:#a0a0bd;
+  --line:rgba(160,140,255,.16);
 }
 
 * {
@@ -44,13 +46,9 @@ a {
   text-decoration:none;
 }
 
-button {
-  font:inherit;
-}
-
 ::selection {
-  background:var(--orange);
-  color:#090909;
+  background:var(--purple);
+  color:white;
 }
 
 /* NAVIGATION */
@@ -61,12 +59,12 @@ nav {
   display:flex;
   align-items:center;
   justify-content:space-between;
-  border-bottom:1px solid var(--line);
   position:sticky;
   top:0;
   z-index:20;
-  background:rgba(9,9,9,.88);
+  background:rgba(8,8,23,.88);
   backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
 }
 
 .logo {
@@ -77,7 +75,7 @@ nav {
 }
 
 .logo span {
-  color:var(--orange);
+  color:var(--blue);
 }
 
 .nav-links {
@@ -86,101 +84,80 @@ nav {
 }
 
 .nav-links a {
-  color:#aaa;
+  color:#aaaac3;
   font-size:13px;
   transition:.3s;
 }
 
 .nav-links a:hover {
-  color:var(--orange);
+  color:var(--blue);
 }
 
 .nav-contact {
-  border:1px solid var(--orange);
-  padding:11px 19px;
+  border:1px solid var(--purple);
+  color:#c5a1ff;
+  padding:10px 19px;
   border-radius:30px;
   font-size:12px;
-  color:var(--orange);
   transition:.3s;
 }
 
 .nav-contact:hover {
-  background:var(--orange);
-  color:#111;
+  background:var(--purple);
+  color:white;
 }
 
 /* HERO */
 
 .hero {
   min-height:calc(100vh - 76px);
+  padding:70px 9%;
   display:flex;
   align-items:center;
-  padding:70px 10%;
   position:relative;
   overflow:hidden;
 }
 
-#hero3d {
-  position:absolute;
-  right:0;
-  top:0;
-  width:58%;
-  height:100%;
-  z-index:1;
-  pointer-events:auto;
-}
-
-.hero::after {
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,#090909 15%,transparent 90%);
-  z-index:2;
-  pointer-events:none;
-}
-
 .hero-content {
+  max-width:570px;
   position:relative;
   z-index:3;
-  max-width:650px;
-  pointer-events:none;
-}
-
-.hero-content a {
-  pointer-events:auto;
 }
 
 .eyebrow,
 .section-label {
-  color:var(--orange);
+  color:var(--blue);
   font-size:11px;
-  letter-spacing:4px;
   font-weight:700;
+  letter-spacing:4px;
   margin-bottom:24px;
 }
 
 .hero h1 {
   font-family:'Space Grotesk',sans-serif;
-  font-size:clamp(65px,10vw,120px);
-  line-height:.95;
+  font-size:clamp(65px,10vw,112px);
   letter-spacing:-7px;
+  line-height:.95;
 }
 
 .hero h1 span {
-  color:var(--orange);
+  background:linear-gradient(90deg,var(--blue),var(--purple));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
 
 .hero h2 {
-  font-size:clamp(19px,3vw,26px);
+  font-size:23px;
   font-weight:500;
-  margin-top:25px;
+  margin-top:24px;
 }
 
 .hero-description {
   color:var(--muted);
-  max-width:470px;
-  line-height:1.9;
   font-size:15px;
+  line-height:1.9;
+  max-width:450px;
   margin-top:18px;
 }
 
@@ -188,7 +165,7 @@ nav {
   display:flex;
   gap:14px;
   flex-wrap:wrap;
-  margin-top:32px;
+  margin-top:30px;
 }
 
 .btn {
@@ -203,36 +180,232 @@ nav {
 }
 
 .btn-primary {
-  background:var(--orange);
-  color:#111;
+  background:linear-gradient(100deg,var(--blue),var(--purple));
+  color:#09091b;
 }
 
 .btn-primary:hover {
-  background:#fff;
   transform:translateY(-4px);
+  box-shadow:0 0 30px #794dff66;
 }
 
 .btn-outline {
-  border:1px solid #444;
-  color:#eee;
+  border:1px solid #51467c;
 }
 
 .btn-outline:hover {
-  border-color:var(--orange);
-  color:var(--orange);
+  border-color:var(--blue);
+  color:var(--blue);
 }
 
 .scroll-note {
   position:absolute;
-  bottom:30px;
-  left:10%;
-  color:#777;
+  bottom:28px;
+  left:9%;
+  color:#777791;
   font-size:10px;
   letter-spacing:3px;
-  z-index:3;
 }
 
-/* GENERAL SECTIONS */
+/* ANIME ORB */
+
+.ai-orb {
+  --orb-size:390px;
+  width:var(--orb-size);
+  height:var(--orb-size);
+  position:relative;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  isolation:isolate;
+}
+
+.orb-scene {
+  position:absolute;
+  inset:8%;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 35% 25%,
+    rgba(255,255,255,.25),transparent 18%),
+    radial-gradient(circle at 50% 45%,
+    #343b9a 0%,#171b59 40%,
+    #10102d 70%,#080817 100%);
+  border:2px solid rgba(65,205,255,.8);
+  box-shadow:
+    0 0 15px #19c9ff,
+    0 0 45px #246dff88,
+    inset 0 0 35px #8b55ff88,
+    inset 0 0 90px #19c9ff44;
+  overflow:hidden;
+  z-index:2;
+  animation:orbFloat 5s ease-in-out infinite;
+}
+
+.orb-scene::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  background:linear-gradient(
+    125deg,
+    transparent 20%,
+    rgba(255,255,255,.18) 45%,
+    transparent 60%
+  );
+  pointer-events:none;
+  z-index:5;
+}
+
+.orb-scene::after {
+  content:"";
+  position:absolute;
+  inset:7%;
+  border:1px solid #a6dfff66;
+  border-radius:50%;
+  box-shadow:inset 0 0 30px #45baff33;
+  pointer-events:none;
+}
+
+.orb-character {
+  position:absolute;
+  width:100%;
+  height:100%;
+  inset:0;
+  display:grid;
+  place-items:center;
+  z-index:3;
+  animation:characterFloat 4s ease-in-out infinite;
+}
+
+.orb-character svg {
+  width:92%;
+  height:92%;
+  overflow:visible;
+  filter:drop-shadow(0 0 12px #60baff77);
+}
+
+.orb-light {
+  position:absolute;
+  width:65%;
+  height:15%;
+  bottom:5%;
+  left:17.5%;
+  border-radius:50%;
+  background:#31baff;
+  filter:blur(25px);
+  opacity:.65;
+  z-index:1;
+}
+
+.orbit {
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:116%;
+  height:37%;
+  border:3px solid transparent;
+  border-top-color:var(--blue);
+  border-bottom-color:var(--purple);
+  border-radius:50%;
+  transform:translate(-50%,-50%) rotate(-25deg);
+  filter:drop-shadow(0 0 7px var(--blue));
+  z-index:4;
+  animation:orbitSpin 8s linear infinite;
+  pointer-events:none;
+}
+
+.orbit.two {
+  width:125%;
+  height:52%;
+  transform:translate(-50%,-50%) rotate(55deg);
+  border-top-color:var(--purple);
+  border-bottom-color:var(--blue);
+  animation-duration:11s;
+  animation-direction:reverse;
+}
+
+.orbit.three {
+  width:110%;
+  height:65%;
+  transform:translate(-50%,-50%) rotate(-65deg);
+  border-width:2px;
+  border-top-color:#a8eaff;
+  border-bottom-color:#b76cff;
+  animation-duration:15s;
+}
+
+.orb-platform {
+  position:absolute;
+  bottom:-2%;
+  width:82%;
+  height:13%;
+  border:3px solid #328eff;
+  border-radius:50%;
+  background:radial-gradient(ellipse,#3136a4,#11112c 65%);
+  box-shadow:
+    0 0 15px #24baff,
+    0 0 40px #794dff88;
+  transform:rotateX(60deg);
+  z-index:1;
+}
+
+.orb-particles {
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:6;
+}
+
+.orb-particles i {
+  position:absolute;
+  width:4px;
+  height:4px;
+  background:#9feaff;
+  border-radius:50%;
+  box-shadow:0 0 12px 3px #448cff;
+  animation:particleBlink 2s ease-in-out infinite alternate;
+}
+
+.orb-particles i:nth-child(1) {
+  left:12%;top:28%;
+}
+.orb-particles i:nth-child(2) {
+  right:9%;top:35%;animation-delay:.5s;
+}
+.orb-particles i:nth-child(3) {
+  left:22%;bottom:19%;animation-delay:1s;
+}
+.orb-particles i:nth-child(4) {
+  right:20%;bottom:20%;animation-delay:.8s;
+}
+.orb-particles i:nth-child(5) {
+  left:50%;top:4%;animation-delay:.3s;
+}
+
+/* HERO ORB POSITION */
+
+.hero-orb {
+  position:absolute;
+  right:5%;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:2;
+}
+
+.orb-caption {
+  position:absolute;
+  bottom:-42px;
+  left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  text-align:center;
+  color:#aaaac9;
+  font-size:10px;
+  letter-spacing:3px;
+  white-space:nowrap;
+}
+
+/* SECTIONS */
 
 .section {
   padding:105px 10%;
@@ -241,92 +414,48 @@ nav {
 
 .section-title {
   font-family:'Space Grotesk',sans-serif;
-  font-size:clamp(35px,5vw,58px);
+  font-size:clamp(36px,5vw,58px);
   letter-spacing:-2px;
-  margin-bottom:23px;
+  margin-bottom:20px;
 }
 
 .section-title span {
-  color:var(--orange);
+  background:linear-gradient(90deg,var(--blue),var(--purple));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
 
 .section-desc {
   color:var(--muted);
   max-width:650px;
-  line-height:1.9;
   font-size:15px;
+  line-height:1.9;
 }
 
-/* ABOUT + AVATAR */
+/* ABOUT */
 
 .about-grid {
   display:grid;
-  grid-template-columns:1.1fr 1fr;
-  gap:45px;
+  grid-template-columns:1fr 1fr;
   align-items:center;
+  gap:35px;
 }
 
-.about-card {
+.about-orb-wrap {
+  min-height:450px;
+  display:grid;
+  place-items:center;
   position:relative;
-  min-height:430px;
   overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  padding:25px;
-  border:1px solid #342117;
-  border-radius:14px;
+  border:1px solid var(--line);
+  border-radius:15px;
   background:
-    radial-gradient(circle at 50% 40%,#32180e,#111 65%);
+    radial-gradient(circle,#161a4c 0%,#0b0b1c 70%);
 }
 
-#avatar3d {
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  touch-action:pan-y;
-}
-
-.avatar-label {
-  position:absolute;
-  top:25px;
-  left:25px;
-  color:var(--orange);
-  font-size:10px;
-  letter-spacing:3px;
-  z-index:2;
-  pointer-events:none;
-}
-
-.avatar-caption {
-  position:relative;
-  z-index:2;
-  display:flex;
-  flex-direction:column;
-  gap:7px;
-  pointer-events:none;
-}
-
-.avatar-caption strong {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:28px;
-}
-
-.avatar-caption small {
-  color:var(--orange);
-  font-size:9px;
-  letter-spacing:2px;
-}
-
-.avatar-hint {
-  position:absolute;
-  bottom:25px;
-  right:25px;
-  color:#888;
-  font-size:10px;
-  z-index:2;
-  pointer-events:none;
+.about-orb {
+  --orb-size:330px;
 }
 
 .about-tags {
@@ -335,12 +464,12 @@ nav {
 
 .about-tag {
   display:inline-block;
-  color:var(--orange);
-  border:1px solid #55301d;
   padding:8px 12px;
+  margin:4px;
+  border:1px solid #514080;
+  color:#b7a0ff;
   border-radius:30px;
   font-size:11px;
-  margin:5px 4px 0 0;
 }
 
 /* SKILLS */
@@ -359,26 +488,27 @@ nav {
   border:1px solid var(--line);
   border-radius:10px;
   padding:28px;
-  transition:transform .3s,border-color .3s;
+  transition:.3s;
 }
 
 .skill:hover,
 .project:hover {
   transform:translateY(-7px);
-  border-color:var(--orange);
+  border-color:var(--blue);
+  box-shadow:0 10px 35px #3020a022;
 }
 
 .skill-icon {
-  color:var(--orange);
   font-size:30px;
-  margin-bottom:19px;
+  color:var(--blue);
+  margin-bottom:20px;
 }
 
 .skill h3,
 .project h3 {
   font-family:'Space Grotesk',sans-serif;
   font-size:19px;
-  margin-bottom:11px;
+  margin-bottom:12px;
 }
 
 .skill p,
@@ -389,43 +519,40 @@ nav {
 }
 
 .project-number {
-  color:var(--orange);
+  color:var(--blue);
   font-size:11px;
   letter-spacing:3px;
-  margin-bottom:28px;
+  margin-bottom:27px;
 }
 
 .project-status {
   display:inline-block;
-  font-size:10px;
-  color:var(--orange);
-  border:1px solid #55301d;
-  padding:7px 11px;
-  border-radius:20px;
   margin-top:18px;
+  padding:7px 11px;
+  border:1px solid #514080;
+  border-radius:20px;
+  color:#b7a0ff;
+  font-size:10px;
 }
 
 /* CONTACT */
 
 .contact-box {
-  border:1px solid #55301d;
-  border-radius:15px;
-  padding:60px 30px;
-  background:
-    radial-gradient(ellipse at top right,#321a0f,#111 65%);
   text-align:center;
-}
-
-.contact-box .section-title {
-  margin-bottom:15px;
+  padding:65px 25px;
+  border:1px solid #514080;
+  border-radius:15px;
+  background:radial-gradient(
+    ellipse at top right,#26205b,#101025 65%
+  );
 }
 
 .contact-box .section-desc {
-  margin:0 auto;
+  margin:auto;
 }
 
 .contact-box .btn {
-  margin-top:30px;
+  margin-top:28px;
 }
 
 /* FOOTER */
@@ -437,21 +564,17 @@ footer {
   align-items:center;
   gap:15px;
   flex-wrap:wrap;
-  color:#777;
   border-top:1px solid var(--line);
+  color:#777791;
   font-size:12px;
 }
 
-footer .logo {
-  color:#fff;
-}
-
-/* ANIMATION */
+/* SCROLL REVEAL */
 
 .reveal {
   opacity:0;
   transform:translateY(25px);
-  transition:opacity .8s ease,transform .8s ease;
+  transition:.8s ease;
 }
 
 .reveal.visible {
@@ -459,27 +582,33 @@ footer .logo {
   transform:translateY(0);
 }
 
-@media(prefers-reduced-motion:reduce) {
-  html {
-    scroll-behavior:auto;
-  }
-  .reveal {
-    opacity:1;
-    transform:none;
-    transition:none;
-  }
+/* ANIMATIONS */
+
+@keyframes orbFloat {
+  0%,100% {transform:translateY(0);}
+  50% {transform:translateY(-12px);}
+}
+
+@keyframes characterFloat {
+  0%,100% {transform:translateY(5px);}
+  50% {transform:translateY(-9px);}
+}
+
+@keyframes orbitSpin {
+  from {rotate:0deg;}
+  to {rotate:360deg;}
+}
+
+@keyframes particleBlink {
+  from {opacity:.3;transform:scale(.7);}
+  to {opacity:1;transform:scale(1.5);}
 }
 
 /* MOBILE */
 
-@media(max-width:800px) {
+@media(max-width:850px) {
   nav {
-    height:68px;
     padding:0 5%;
-  }
-
-  .logo {
-    font-size:22px;
   }
 
   .nav-links {
@@ -495,35 +624,35 @@ footer .logo {
   }
 
   .hero {
-    min-height:820px;
-    padding:65px 7%;
+    min-height:850px;
     align-items:flex-start;
+    padding:65px 7%;
   }
 
   .hero-content {
-    margin-top:60px;
+    margin-top:20px;
   }
 
   .hero h1 {
-    font-size:clamp(65px,13vw,90px);
-    letter-spacing:-4px;
+    font-size:75px;
+    letter-spacing:-5px;
   }
 
-  #hero3d {
-    width:100%;
-    height:60%;
-    top:35%;
-    opacity:.65;
+  .hero-orb {
+    --orb-size:300px;
+    top:auto;
+    bottom:90px;
+    right:50%;
+    transform:translateX(50%);
   }
 
-  .hero::after {
-    background:linear-gradient(
-      180deg,#090909 15%,transparent 85%
-    );
+  .hero-orb .orb-caption {
+    bottom:-30px;
   }
 
   .scroll-note {
     left:7%;
+    bottom:22px;
   }
 
   .section {
@@ -532,11 +661,14 @@ footer .logo {
 
   .about-grid {
     grid-template-columns:1fr;
-    gap:30px;
   }
 
-  .about-card {
-    min-height:390px;
+  .about-orb-wrap {
+    min-height:400px;
+  }
+
+  .about-orb {
+    --orb-size:280px;
   }
 
   .skills-grid,
@@ -557,7 +689,24 @@ footer .logo {
     font-size:10px;
   }
   .hero h1 {
-    font-size:61px;
+    font-size:63px;
+  }
+  .hero {
+    min-height:800px;
+  }
+  .hero-orb {
+    --orb-size:265px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation:none!important;
+    scroll-behavior:auto!important;
+  }
+  .reveal {
+    opacity:1;
+    transform:none;
   }
 }
 </style>
@@ -582,11 +731,9 @@ footer .logo {
 
 <main>
 
-<!-- HOME -->
+<!-- HERO SECTION -->
 
 <section class="hero" id="home">
-
-  <canvas id="hero3d"></canvas>
 
   <div class="hero-content">
 
@@ -616,13 +763,167 @@ footer .logo {
 
   </div>
 
+  <!-- HERO AI ORB -->
+
+  <div class="ai-orb hero-orb">
+
+    <div class="orb-light"></div>
+
+    <div class="orb-scene">
+      <div class="orb-character">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+
+          <defs>
+            <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#b98cff"/>
+              <stop offset=".5" stop-color="#4935b9"/>
+              <stop offset="1" stop-color="#06cfff"/>
+            </linearGradient>
+
+            <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+              <stop stop-color="#fff0ff"/>
+              <stop offset="1" stop-color="#e4baff"/>
+            </linearGradient>
+
+            <linearGradient id="suit" x1="0" y1="0" x2="1" y2="1">
+              <stop stop-color="#3c4b9d"/>
+              <stop offset=".5" stop-color="#11152f"/>
+              <stop offset="1" stop-color="#04bfff"/>
+            </linearGradient>
+
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="5" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+
+          <!-- Hair behind -->
+          <path d="M85 350 Q25 190 100 75 Q150 0 240 35 Q365 45 350 210 L330 370 L260 320 L130 360Z"
+            fill="url(#hair)" stroke="#9c75ff" stroke-width="4"/>
+
+          <!-- Body -->
+          <path d="M105 390 Q110 275 170 260 L230 260 Q300 280 320 390Z"
+            fill="url(#suit)" stroke="#27bfff" stroke-width="4"/>
+
+          <path d="M155 300 L200 345 L245 300"
+            fill="none" stroke="#73eaff" stroke-width="6"/>
+
+          <circle cx="200" cy="325" r="14"
+            fill="#a04dff" stroke="#55eaff" stroke-width="5"
+            filter="url(#glow)"/>
+
+          <!-- Neck -->
+          <path d="M170 230 L170 280 Q200 305 230 280 L230 230Z"
+            fill="url(#skin)"/>
+
+          <!-- Face -->
+          <ellipse cx="200" cy="175" rx="82" ry="100"
+            fill="url(#skin)" stroke="#f5caff" stroke-width="3"/>
+
+          <!-- Hair top -->
+          <path d="M115 165 Q90 50 190 45 Q300 20 285 155
+            Q250 105 230 100 Q180 150 125 145Z"
+            fill="url(#hair)"/>
+
+          <!-- Hair side locks -->
+          <path d="M125 120 Q90 235 135 320 Q105 300 90 220Z"
+            fill="#4935b9" stroke="#9e83ff" stroke-width="3"/>
+
+          <path d="M270 105 Q330 210 275 330 Q315 275 315 175Z"
+            fill="#08b8ff" stroke="#a78bff" stroke-width="3"/>
+
+          <!-- Eyes -->
+          <ellipse cx="168" cy="178" rx="19" ry="27"
+            fill="#ffffff"/>
+          <ellipse cx="232" cy="178" rx="19" ry="27"
+            fill="#ffffff"/>
+
+          <ellipse cx="171" cy="181" rx="12" ry="20"
+            fill="#2479ff"/>
+          <ellipse cx="229" cy="181" rx="12" ry="20"
+            fill="#2479ff"/>
+
+          <ellipse cx="173" cy="184" rx="6" ry="12"
+            fill="#13143d"/>
+          <ellipse cx="227" cy="184" rx="6" ry="12"
+            fill="#13143d"/>
+
+          <circle cx="176" cy="173" r="5" fill="white"/>
+          <circle cx="230" cy="173" r="5" fill="white"/>
+
+          <!-- Eyelashes -->
+          <path d="M145 160 L132 150 M160 151 L154 137
+            M210 151 L216 137 M245 160 L260 150"
+            stroke="#28214f" stroke-width="5"
+            stroke-linecap="round"/>
+
+          <!-- Nose and smile -->
+          <path d="M198 193 L194 210"
+            stroke="#d98fc9" stroke-width="3"
+            stroke-linecap="round"/>
+
+          <path d="M180 224 Q200 241 220 224"
+            fill="none" stroke="#d34c9a"
+            stroke-width="4" stroke-linecap="round"/>
+
+          <!-- Bangs -->
+          <path d="M120 125 Q135 45 215 50
+            Q175 110 190 145 Q145 120 125 175Z"
+            fill="url(#hair)" stroke="#b28dff" stroke-width="3"/>
+
+          <path d="M205 55 Q280 50 275 155
+            Q245 115 220 110Z"
+            fill="#332b9c"/>
+
+          <!-- Headphones -->
+          <path d="M112 180 Q90 40 200 35 Q310 35 288 180"
+            fill="none" stroke="#25d7ff"
+            stroke-width="12" filter="url(#glow)"/>
+
+          <rect x="92" y="145" width="35" height="65"
+            rx="13" fill="#171a52"
+            stroke="#22d7ff" stroke-width="6"/>
+
+          <rect x="273" y="145" width="35" height="65"
+            rx="13" fill="#171a52"
+            stroke="#a66aff" stroke-width="6"/>
+
+          <circle cx="110" cy="177" r="10"
+            fill="#18d8ff" filter="url(#glow)"/>
+
+          <circle cx="290" cy="177" r="10"
+            fill="#a76bff" filter="url(#glow)"/>
+
+        </svg>
+      </div>
+    </div>
+
+    <div class="orbit"></div>
+    <div class="orbit two"></div>
+    <div class="orbit three"></div>
+
+    <div class="orb-platform"></div>
+
+    <div class="orb-particles">
+      <i></i><i></i><i></i><i></i><i></i>
+    </div>
+
+    <div class="orb-caption">
+      YOUR DIGITAL UNIVERSE
+    </div>
+
+  </div>
+
   <div class="scroll-note">
     SCROLL TO EXPLORE ↓
   </div>
 
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT SECTION -->
 
 <section class="section reveal" id="about">
 
@@ -635,43 +936,147 @@ footer .logo {
       </div>
 
       <h2 class="section-title">
-        Curiosity Creates <span>Possibilities.</span>
+        Creating the <span>Future.</span>
       </h2>
 
       <p class="section-desc">
         I am AlAMIN, an aspiring AI & Creative Developer
-        passionate about artificial intelligence, technology
-        and digital creativity.
+        passionate about artificial intelligence,
+        technology and digital creativity.
 
-        I enjoy exploring new ideas and learning how to
-        turn them into real digital projects.
+        I enjoy exploring new ideas and turning
+        imagination into meaningful digital projects.
       </p>
 
       <div class="about-tags">
         <span class="about-tag">AI & Technology</span>
-        <span class="about-tag">Digital Creativity</span>
+        <span class="about-tag">Creative Design</span>
         <span class="about-tag">Innovation</span>
       </div>
 
     </div>
 
-    <!-- 3D HUMAN AVATAR -->
+    <!-- SECOND AI ORB -->
 
-    <div class="about-card">
+    <div class="about-orb-wrap">
 
-      <div class="avatar-label">
-        MY DIGITAL IDENTITY
-      </div>
+      <div class="ai-orb about-orb">
 
-      <canvas id="avatar3d"></canvas>
+        <div class="orb-light"></div>
 
-      <div class="avatar-caption">
-        <strong>AlAMIN</strong>
-        <small>CREATIVE MIND / DIGITAL FUTURE</small>
-      </div>
+        <div class="orb-scene">
 
-      <div class="avatar-hint">
-        MOVE / TOUCH TO ROTATE
+          <div class="orb-character">
+            <svg viewBox="0 0 400 400"
+              xmlns="http://www.w3.org/2000/svg">
+
+              <defs>
+                <linearGradient id="hair2" x1="0" y1="0" x2="1" y2="1">
+                  <stop stop-color="#bd92ff"/>
+                  <stop offset=".5" stop-color="#4a35b7"/>
+                  <stop offset="1" stop-color="#00cfff"/>
+                </linearGradient>
+
+                <linearGradient id="skin2" x1="0" y1="0" x2="0" y2="1">
+                  <stop stop-color="#fff0ff"/>
+                  <stop offset="1" stop-color="#e4baff"/>
+                </linearGradient>
+
+                <linearGradient id="suit2" x1="0" y1="0" x2="1" y2="1">
+                  <stop stop-color="#4858a7"/>
+                  <stop offset="1" stop-color="#11152f"/>
+                </linearGradient>
+              </defs>
+
+              <path d="M85 350 Q25 190 100 75 Q150 0 240 35 Q365 45 350 210 L330 370 L260 320 L130 360Z"
+                fill="url(#hair2)"/>
+
+              <path d="M105 390 Q110 275 170 260 L230 260 Q300 280 320 390Z"
+                fill="url(#suit2)" stroke="#27bfff" stroke-width="4"/>
+
+              <path d="M155 300 L200 345 L245 300"
+                fill="none" stroke="#73eaff" stroke-width="6"/>
+
+              <circle cx="200" cy="325" r="14"
+                fill="#a04dff" stroke="#55eaff" stroke-width="5"/>
+
+              <path d="M170 230 L170 280 Q200 305 230 280 L230 230Z"
+                fill="url(#skin2)"/>
+
+              <ellipse cx="200" cy="175" rx="82" ry="100"
+                fill="url(#skin2)"/>
+
+              <path d="M115 165 Q90 50 190 45 Q300 20 285 155
+                Q250 105 230 100 Q180 150 125 145Z"
+                fill="url(#hair2)"/>
+
+              <path d="M125 120 Q90 235 135 320 Q105 300 90 220Z"
+                fill="#4935b9"/>
+
+              <path d="M270 105 Q330 210 275 330 Q315 275 315 175Z"
+                fill="#08b8ff"/>
+
+              <ellipse cx="168" cy="178" rx="19" ry="27" fill="white"/>
+              <ellipse cx="232" cy="178" rx="19" ry="27" fill="white"/>
+
+              <ellipse cx="171" cy="181" rx="12" ry="20" fill="#2479ff"/>
+              <ellipse cx="229" cy="181" rx="12" ry="20" fill="#2479ff"/>
+
+              <ellipse cx="173" cy="184" rx="6" ry="12" fill="#13143d"/>
+              <ellipse cx="227" cy="184" rx="6" ry="12" fill="#13143d"/>
+
+              <circle cx="176" cy="173" r="5" fill="white"/>
+              <circle cx="230" cy="173" r="5" fill="white"/>
+
+              <path d="M145 160 L132 150 M160 151 L154 137
+                M210 151 L216 137 M245 160 L260 150"
+                stroke="#28214f" stroke-width="5"
+                stroke-linecap="round"/>
+
+              <path d="M198 193 L194 210"
+                stroke="#d98fc9" stroke-width="3"/>
+
+              <path d="M180 224 Q200 241 220 224"
+                fill="none" stroke="#d34c9a"
+                stroke-width="4" stroke-linecap="round"/>
+
+              <path d="M120 125 Q135 45 215 50
+                Q175 110 190 145 Q145 120 125 175Z"
+                fill="url(#hair2)"/>
+
+              <path d="M205 55 Q280 50 275 155
+                Q245 115 220 110Z"
+                fill="#332b9c"/>
+
+              <path d="M112 180 Q90 40 200 35 Q310 35 288 180"
+                fill="none" stroke="#25d7ff" stroke-width="12"/>
+
+              <rect x="92" y="145" width="35" height="65"
+                rx="13" fill="#171a52"
+                stroke="#22d7ff" stroke-width="6"/>
+
+              <rect x="273" y="145" width="35" height="65"
+                rx="13" fill="#171a52"
+                stroke="#a66aff" stroke-width="6"/>
+
+              <circle cx="110" cy="177" r="10" fill="#18d8ff"/>
+              <circle cx="290" cy="177" r="10" fill="#a76bff"/>
+
+            </svg>
+          </div>
+
+        </div>
+
+        <div class="orbit"></div>
+        <div class="orbit two"></div>
+        <div class="orbit three"></div>
+
+        <div class="orb-platform"></div>
+
+        <div class="orb-particles">
+          <i></i><i></i><i></i><i></i><i></i>
+        </div>
+
       </div>
 
     </div>
@@ -711,8 +1116,8 @@ footer .logo {
       <div class="skill-icon">◇</div>
       <h3>Web Technology</h3>
       <p>
-        Learning modern web development and
-        interactive digital experiences.
+        Learning modern web development
+        and interactive experiences.
       </p>
     </div>
 
@@ -720,8 +1125,8 @@ footer .logo {
       <div class="skill-icon">✧</div>
       <h3>Creative Design</h3>
       <p>
-        Exploring visual design, minimal interfaces
-        and creative concepts.
+        Exploring visual design, minimal
+        interfaces and creative concepts.
       </p>
     </div>
 
@@ -742,8 +1147,8 @@ footer .logo {
   </h2>
 
   <p class="section-desc">
-    A growing collection of concepts, experiments
-    and digital projects.
+    A growing collection of concepts,
+    experiments and digital projects.
   </p>
 
   <div class="project-grid">
@@ -760,20 +1165,20 @@ footer .logo {
 
     <div class="project">
       <div class="project-number">PROJECT / 02</div>
-      <h3>Personal Portfolio</h3>
+      <h3>AlAMIN Portfolio</h3>
       <p>
-        A personal digital space combining technology,
-        design and interactive visuals.
+        A personal digital space combining
+        technology, design and interactive visuals.
       </p>
-      <span class="project-status">Building Now</span>
+      <span class="project-status">Live Website</span>
     </div>
 
     <div class="project">
       <div class="project-number">PROJECT / 03</div>
       <h3>Creative Lab</h3>
       <p>
-        A space for future experiments in
-        creative technology and digital ideas.
+        Future experiments in creative
+        technology and digital ideas.
       </p>
       <span class="project-status">Coming Soon</span>
     </div>
@@ -819,506 +1224,28 @@ footer .logo {
 <!-- FOOTER -->
 
 <footer>
-
-  <a href="#home" class="logo">
-    Al<span>AMIN.</span>
-  </a>
-
-  <div>
-    © 2026 AlAMIN. Built with curiosity.
-  </div>
-
+  <a href="#home" class="logo">Al<span>AMIN.</span></a>
+  <span>© 2026 AlAMIN. Built with creativity.</span>
 </footer>
 
-<!-- THREE.JS 3D SCENES -->
+<!-- SCROLL ANIMATION -->
 
-<script type="module">
-
-import * as THREE from
-'https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js';
-
-/* COMMON RENDERER */
-
-function createRenderer(canvas) {
-
-  const renderer = new THREE.WebGLRenderer({
-    canvas:canvas,
-    alpha:true,
-    antialias:true
-  });
-
-  renderer.setPixelRatio(
-    Math.min(window.devicePixelRatio,1.5)
-  );
-
-  return renderer;
-}
-
-/* RESPONSIVE SCENE */
-
-function setupScene(canvas,camera,renderer) {
-
-  function resize() {
-
-    const width = canvas.clientWidth;
-    const height = canvas.clientHeight;
-
-    if (!width || !height) return;
-
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-
-    renderer.setSize(width,height,false);
-  }
-
-  const observer = new ResizeObserver(resize);
-  observer.observe(canvas);
-
-  resize();
-
-  return resize;
-}
-
-/* HERO 3D SCENE */
-
-function createHeroScene() {
-
-  const canvas = document.querySelector('#hero3d');
-  if (!canvas) return;
-
-  const scene = new THREE.Scene();
-
-  const camera = new THREE.PerspectiveCamera(
-    45,1,0.1,100
-  );
-
-  camera.position.z = 7;
-
-  const renderer = createRenderer(canvas);
-
-  setupScene(canvas,camera,renderer);
-
-  const group = new THREE.Group();
-  scene.add(group);
-
-  /* Orange wireframe sphere */
-
-  const sphere = new THREE.Mesh(
-    new THREE.IcosahedronGeometry(1.35,2),
-    new THREE.MeshStandardMaterial({
-      color:0xff792e,
-      emissive:0x8d2600,
-      emissiveIntensity:0.8,
-      metalness:0.75,
-      roughness:0.25,
-      wireframe:true
-    })
-  );
-
-  group.add(sphere);
-
-  /* Inner core */
-
-  const core = new THREE.Mesh(
-    new THREE.SphereGeometry(0.85,32,32),
-    new THREE.MeshBasicMaterial({
-      color:0x321509,
-      transparent:true,
-      opacity:0.8
-    })
-  );
-
-  group.add(core);
-
-  /* Orbital rings */
-
-  for(let i=0;i<3;i++) {
-
-    const ring = new THREE.Mesh(
-      new THREE.TorusGeometry(
-        1.8+i*0.15,
-        0.012,
-        8,
-        120
-      ),
-      new THREE.MeshBasicMaterial({
-        color:0xff792e,
-        transparent:true,
-        opacity:0.7
-      })
-    );
-
-    ring.rotation.x = Math.PI/2+i*0.5;
-    ring.rotation.y = i*0.7;
-
-    group.add(ring);
-  }
-
-  /* Particles */
-
-  const particlePositions = [];
-
-  for(let i=0;i<500;i++) {
-
-    particlePositions.push(
-      (Math.random()-0.5)*12,
-      (Math.random()-0.5)*9,
-      (Math.random()-0.5)*7
-    );
-
-  }
-
-  const particleGeometry = new THREE.BufferGeometry();
-
-  particleGeometry.setAttribute(
-    'position',
-    new THREE.Float32BufferAttribute(
-      particlePositions,3
-    )
-  );
-
-  const particles = new THREE.Points(
-    particleGeometry,
-    new THREE.PointsMaterial({
-      color:0xffa16c,
-      size:0.018,
-      transparent:true,
-      opacity:0.7
-    })
-  );
-
-  scene.add(particles);
-
-  /* Lights */
-
-  scene.add(
-    new THREE.AmbientLight(0xffffff,1.2)
-  );
-
-  const light = new THREE.PointLight(0xff792e,35);
-  light.position.set(3,3,4);
-  scene.add(light);
-
-  let targetX = 0;
-  let targetY = 0;
-
-  canvas.addEventListener('pointermove',event=>{
-
-    const rect = canvas.getBoundingClientRect();
-
-    targetY =
-      ((event.clientX-rect.left)/rect.width-0.5)*0.6;
-
-    targetX =
-      ((event.clientY-rect.top)/rect.height-0.5)*0.4;
-
-  });
-
-  const reducedMotion = window.matchMedia(
-    '(prefers-reduced-motion: reduce)'
-  ).matches;
-
-  function animate() {
-
-    requestAnimationFrame(animate);
-
-    if(!reducedMotion) {
-
-      group.rotation.y += 0.002;
-
-      group.rotation.y +=
-        (targetY-group.rotation.y)*0.01;
-
-      group.rotation.x +=
-        (targetX-group.rotation.x)*0.01;
-
-      particles.rotation.y += 0.0003;
-
-    }
-
-    renderer.render(scene,camera);
-  }
-
-  animate();
-}
-
-/* 3D HUMAN AVATAR */
-
-function createAvatarScene() {
-
-  const canvas = document.querySelector('#avatar3d');
-  if (!canvas) return;
-
-  const scene = new THREE.Scene();
-
-  const camera = new THREE.PerspectiveCamera(
-    35,1,0.1,100
-  );
-
-  camera.position.z = 7;
-
-  const renderer = createRenderer(canvas);
-
-  setupScene(canvas,camera,renderer);
-
-  const avatar = new THREE.Group();
-  scene.add(avatar);
-
-  /* Materials */
-
-  const metal = new THREE.MeshStandardMaterial({
-    color:0x373737,
-    metalness:0.8,
-    roughness:0.3
-  });
-
-  const dark = new THREE.MeshStandardMaterial({
-    color:0x101010,
-    metalness:0.85,
-    roughness:0.28
-  });
-
-  const orange = new THREE.MeshStandardMaterial({
-    color:0xff792e,
-    emissive:0xff4500,
-    emissiveIntensity:1.4,
-    metalness:0.5,
-    roughness:0.3
-  });
-
-  /* Head */
-
-  const head = new THREE.Mesh(
-    new THREE.SphereGeometry(0.76,48,48),
-    metal
-  );
-
-  head.position.y = 1.15;
-  head.scale.set(0.83,1.12,0.83);
-
-  avatar.add(head);
-
-  /* Neck */
-
-  const neck = new THREE.Mesh(
-    new THREE.CylinderGeometry(
-      0.24,0.31,0.5,32
-    ),
-    dark
-  );
-
-  neck.position.y = 0.35;
-  avatar.add(neck);
-
-  /* Shoulders */
-
-  const shoulders = new THREE.Mesh(
-    new THREE.SphereGeometry(1,40,40),
-    dark
-  );
-
-  shoulders.position.y = -0.7;
-  shoulders.scale.set(1.25,0.72,0.62);
-
-  avatar.add(shoulders);
-
-  /* Chest armor */
-
-  const chest = new THREE.Mesh(
-    new THREE.TorusGeometry(0.38,0.018,8,60),
-    orange
-  );
-
-  chest.position.set(0,-0.65,0.55);
-
-  avatar.add(chest);
-
-  /* Futuristic visor */
-
-  const visor = new THREE.Mesh(
-    new THREE.BoxGeometry(0.95,0.13,0.12),
-    orange
-  );
-
-  visor.position.set(0,1.17,0.64);
-
-  avatar.add(visor);
-
-  /* Side head details */
-
-  for(const side of [-1,1]) {
-
-    const detail = new THREE.Mesh(
-      new THREE.SphereGeometry(0.11,20,20),
-      orange
-    );
-
-    detail.position.set(
-      side*0.68,1.12,0.12
-    );
-
-    avatar.add(detail);
-
-  }
-
-  /* Orbital rings */
-
-  const rings = [];
-
-  for(let i=0;i<3;i++) {
-
-    const ring = new THREE.Mesh(
-      new THREE.TorusGeometry(
-        1.7+i*0.18,
-        0.012,
-        8,
-        100
-      ),
-      new THREE.MeshBasicMaterial({
-        color:0xff792e,
-        transparent:true,
-        opacity:0.65
-      })
-    );
-
-    ring.rotation.x = Math.PI/2+i*0.5;
-    ring.rotation.y = i*0.6;
-
-    avatar.add(ring);
-    rings.push(ring);
-  }
-
-  avatar.scale.setScalar(0.95);
-
-  /* Lighting */
-
-  scene.add(
-    new THREE.AmbientLight(0xffffff,1.4)
-  );
-
-  const keyLight = new THREE.PointLight(
-    0xff792e,35,15
-  );
-
-  keyLight.position.set(3,3,4);
-  scene.add(keyLight);
-
-  const fillLight = new THREE.PointLight(
-    0xffffff,12,12
-  );
-
-  fillLight.position.set(-3,1,3);
-  scene.add(fillLight);
-
-  /* Touch and mouse movement */
-
-  let targetX = 0;
-  let targetY = 0;
-
-  canvas.addEventListener('pointermove',event=>{
-
-    const rect = canvas.getBoundingClientRect();
-
-    const x =
-      (event.clientX-rect.left)/rect.width;
-
-    const y =
-      (event.clientY-rect.top)/rect.height;
-
-    targetY = (x-0.5)*0.9;
-    targetX = (y-0.5)*0.5;
-
-  });
-
-  canvas.addEventListener('pointerleave',()=>{
-
-    targetX = 0;
-    targetY = 0;
-
-  });
-
-  const reducedMotion = window.matchMedia(
-    '(prefers-reduced-motion: reduce)'
-  ).matches;
-
-  let clock = 0;
-
-  function animateAvatar() {
-
-    requestAnimationFrame(animateAvatar);
-
-    if(!reducedMotion) {
-
-      clock += 0.01;
-
-      avatar.rotation.y +=
-        (targetY-avatar.rotation.y)*0.035;
-
-      avatar.rotation.x +=
-        (targetX-avatar.rotation.x)*0.035;
-
-      avatar.position.y =
-        Math.sin(clock)*0.035;
-
-      rings.forEach((ring,index)=>{
-
-        ring.rotation.z +=
-          0.0015*(index+1);
-
-      });
-
-    }
-
-    renderer.render(scene,camera);
-
-  }
-
-  animateAvatar();
-}
-
-/* START 3D */
-
-try {
-
-  createHeroScene();
-  createAvatarScene();
-
-} catch(error) {
-
-  console.error(
-    '3D rendering error:',
-    error
-  );
-
-}
-
-/* SCROLL ANIMATION */
-
+<script>
 const revealObserver = new IntersectionObserver(
-  entries=>{
-
-    entries.forEach(entry=>{
-
-      if(entry.isIntersecting) {
-
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-
         revealObserver.unobserve(entry.target);
-
       }
-
     });
-
   },
-  {threshold:0.12}
+  { threshold:0.12 }
 );
 
-document.querySelectorAll('.reveal').forEach(element=>{
-
+document.querySelectorAll('.reveal').forEach(element => {
   revealObserver.observe(element);
-
 });
-
 </script>
 
 </body>
