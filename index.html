@@ -1,228 +1,628 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0b0b0d">
-  <title>AlAMIN | AI & Creative Developer</title>
-  <meta name="description" content="The personal portfolio of AlAMIN, AI & Creative Developer.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="AlAMIN — AI & Creative Developer. Exploring technology and creative digital experiences.">
+<title>AlAMIN — AI & Creative Developer</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-    html {
-      scroll-behavior: smooth;
-    }
+:root {
+  --bg:#090909;
+  --panel:#111111;
+  --orange:#ff792e;
+  --white:#f5f5f5;
+  --muted:#929292;
+  --line:rgba(255,255,255,.09);
+}
 
-    body {
-      background: #0b0b0d;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      min-height: 100vh;
-    }
+* {margin:0;padding:0;box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
+  background:var(--bg);
+  color:var(--white);
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
+}
+a {color:inherit;text-decoration:none}
+::selection {background:var(--orange);color:#090909}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 25px 8%;
-      border-bottom: 1px solid #222;
-    }
+nav {
+  height:78px;
+  padding:0 8%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(9,9,9,.85);
+  backdrop-filter:blur(18px);
+}
+.logo {
+  font-family:'Space Grotesk',sans-serif;
+  font-size:25px;
+  font-weight:700;
+}
+.logo span {color:var(--orange)}
+.nav-links {display:flex;gap:30px}
+.nav-links a {
+  color:#aaa;
+  font-size:13px;
+  transition:.3s;
+}
+.nav-links a:hover {color:var(--orange)}
+.nav-contact {
+  border:1px solid var(--orange);
+  padding:11px 19px;
+  border-radius:30px;
+  font-size:12px;
+  color:var(--orange);
+}
 
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-    }
+.hero {
+  min-height:calc(100vh - 78px);
+  display:flex;
+  align-items:center;
+  padding:65px 10%;
+  position:relative;
+  overflow:hidden;
+}
+.hero-content {
+  position:relative;
+  z-index:3;
+  max-width:650px;
+}
+.eyebrow {
+  color:var(--orange);
+  font-size:11px;
+  letter-spacing:4px;
+  font-weight:700;
+  margin-bottom:25px;
+}
+.hero h1 {
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(65px,10vw,120px);
+  line-height:.95;
+  letter-spacing:-7px;
+}
+.hero h1 span {color:var(--orange)}
+.hero h2 {
+  font-size:clamp(19px,3vw,26px);
+  font-weight:500;
+  margin-top:25px;
+}
+.hero p {
+  color:var(--muted);
+  max-width:470px;
+  line-height:1.9;
+  font-size:15px;
+  margin-top:18px;
+}
+.hero-buttons {
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:32px;
+}
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:15px 23px;
+  border-radius:5px;
+  font-size:13px;
+  font-weight:700;
+  transition:.3s;
+}
+.btn-primary {background:var(--orange);color:#111}
+.btn-primary:hover {
+  background:#fff;
+  transform:translateY(-4px);
+}
+.btn-outline {
+  border:1px solid #444;
+  color:#eee;
+}
+.btn-outline:hover {border-color:var(--orange);color:var(--orange)}
 
-    .logo span {
-      color: #ff792e;
-    }
+#orb {
+  position:absolute;
+  right:0;
+  top:0;
+  width:58%;
+  height:100%;
+  z-index:1;
+  pointer-events:auto;
+}
+.hero::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,#090909 15%,transparent 85%);
+  z-index:2;
+  pointer-events:none;
+}
+.scroll-note {
+  position:absolute;
+  bottom:30px;
+  left:10%;
+  color:#777;
+  font-size:10px;
+  letter-spacing:3px;
+}
 
-    nav a {
-      color: #aaa;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 13px;
-    }
+.section {
+  padding:110px 10%;
+  border-top:1px solid var(--line);
+}
+.section-label {
+  color:var(--orange);
+  font-size:11px;
+  letter-spacing:4px;
+  margin-bottom:17px;
+}
+.section-title {
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(35px,5vw,58px);
+  letter-spacing:-2px;
+  margin-bottom:25px;
+}
+.section-title span {color:var(--orange)}
+.section-desc {
+  color:var(--muted);
+  max-width:650px;
+  line-height:1.9;
+  font-size:15px;
+}
+.about-grid {
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+.about-card {
+  border:1px solid var(--line);
+  padding:32px;
+  background:linear-gradient(140deg,#161616,#0b0b0b);
+  border-radius:12px;
+}
+.about-card h3 {
+  font-family:'Space Grotesk';
+  font-size:23px;
+  margin-bottom:15px;
+}
+.about-card p {
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.9;
+}
+.about-tag {
+  display:inline-block;
+  color:var(--orange);
+  border:1px solid #55301d;
+  padding:8px 12px;
+  border-radius:30px;
+  font-size:11px;
+  margin:6px 4px 0 0;
+}
 
-    nav a:hover {
-      color: #ff792e;
-    }
+.skills-grid,.project-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:40px;
+}
+.skill,.project {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:27px;
+  transition:.3s;
+}
+.skill:hover,.project:hover {
+  transform:translateY(-7px);
+  border-color:var(--orange);
+}
+.skill-icon {
+  color:var(--orange);
+  font-size:27px;
+  margin-bottom:18px;
+}
+.skill h3,.project h3 {
+  font-family:'Space Grotesk';
+  font-size:19px;
+  margin-bottom:10px;
+}
+.skill p,.project p {
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
+}
+.project-number {
+  color:var(--orange);
+  font-size:12px;
+  letter-spacing:3px;
+  margin-bottom:28px;
+}
+.project-status {
+  display:inline-block;
+  font-size:10px;
+  color:var(--orange);
+  border:1px solid #55301d;
+  padding:6px 10px;
+  border-radius:20px;
+  margin-top:17px;
+}
+.contact-box {
+  border:1px solid #55301d;
+  border-radius:15px;
+  padding:55px 30px;
+  background:radial-gradient(ellipse at top right,#321a0f,#111 65%);
+  text-align:center;
+}
+.contact-box .section-title {margin-bottom:15px}
+.contact-box .section-desc {margin:0 auto}
+footer {
+  padding:30px 10%;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+  color:#777;
+  border-top:1px solid var(--line);
+  font-size:12px;
+}
 
-    .hero {
-      min-height: 85vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 70px 10%;
-      position: relative;
-      overflow: hidden;
-    }
+.reveal {
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .8s ease,transform .8s ease;
+}
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
 
-    .glow {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      background: #ff792e;
-      filter: blur(150px);
-      opacity: 0.16;
-      right: 5%;
-      top: 20%;
-      pointer-events: none;
-    }
-
-    .tag {
-      color: #ff792e;
-      letter-spacing: 3px;
-      font-size: 12px;
-      margin-bottom: 25px;
-    }
-
-    h1 {
-      font-size: clamp(55px, 10vw, 110px);
-      line-height: 1;
-      letter-spacing: -5px;
-    }
-
-    h1 span {
-      color: #ff792e;
-    }
-
-    .subtitle {
-      color: #aaa;
-      font-size: 20px;
-      margin-top: 25px;
-    }
-
-    .description {
-      color: #888;
-      max-width: 470px;
-      line-height: 1.8;
-      margin-top: 18px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 35px;
-      background: #ff792e;
-      color: #111;
-      padding: 15px 28px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      width: fit-content;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: white;
-      transform: translateY(-4px);
-    }
-
-    .section {
-      padding: 80px 10%;
-      border-top: 1px solid #222;
-    }
-
-    .section h2 {
-      font-size: 35px;
-      margin-bottom: 20px;
-    }
-
-    .section h2 span {
-      color: #ff792e;
-    }
-
-    .section p {
-      color: #999;
-      line-height: 1.8;
-    }
-
-    footer {
-      padding: 30px;
-      text-align: center;
-      color: #666;
-      border-top: 1px solid #222;
-      font-size: 13px;
-    }
-
-    @media(max-width:600px) {
-      nav {
-        padding: 20px 6%;
-      }
-
-      nav a {
-        margin-left: 10px;
-        font-size: 11px;
-      }
-
-      .hero {
-        padding: 60px 7%;
-      }
-
-      h1 {
-        letter-spacing: -3px;
-      }
-
-      .section {
-        padding: 60px 7%;
-      }
-    }
-  </style>
+@media(max-width:800px) {
+  nav {padding:0 5%;height:68px}
+  .nav-links {gap:13px}
+  .nav-links a {font-size:11px}
+  .nav-contact {display:none}
+  .hero {padding:65px 7%;min-height:820px;align-items:flex-start}
+  .hero-content {margin-top:60px}
+  .hero h1 {letter-spacing:-4px}
+  #orb {
+    width:100%;
+    height:60%;
+    top:30%;
+    opacity:.65;
+  }
+  .hero::after {
+    background:linear-gradient(180deg,#090909 15%,transparent 85%);
+  }
+  .scroll-note {left:7%}
+  .section {padding:80px 7%}
+  .about-grid {grid-template-columns:1fr;gap:25px}
+  .skills-grid,.project-grid {grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce) {
+  html {scroll-behavior:auto}
+  *,*::before,*::after {
+    transition:none!important;
+    animation:none!important;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <nav>
-    <div class="logo">Al<span>AMIN.</span></div>
-    <div>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+<nav>
+  <a href="#home" class="logo">Al<span>AMIN.</span></a>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+  </div>
+  <a href="#contact" class="nav-contact">Let's Talk ↗</a>
+</nav>
+
+<main>
+
+<section class="hero" id="home">
+  <canvas id="orb"></canvas>
+  <div class="hero-content">
+    <div class="eyebrow">WELCOME TO MY DIGITAL WORLD</div>
+    <h1>Al<span>AMIN</span></h1>
+    <h2>AI & Creative Developer</h2>
+    <p>
+      Exploring the future of artificial intelligence,
+      technology and creative digital experiences.
+      Turning ideas into meaningful digital experiences.
+    </p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary">Explore My Work ↗</a>
+      <a href="#about" class="btn btn-outline">Discover More</a>
     </div>
-  </nav>
+  </div>
+  <div class="scroll-note">SCROLL TO EXPLORE ↓</div>
+</section>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="glow"></div>
-
-      <p class="tag">WELCOME TO MY DIGITAL WORLD</p>
-
-      <h1>Al<span>AMIN</span></h1>
-
-      <p class="subtitle">AI & Creative Developer</p>
-
-      <p class="description">
-        Exploring the future of artificial intelligence,
-        technology and creative digital experiences.
-        Turning ideas into reality through innovation.
-      </p>
-
-      <a href="#about" class="btn">Explore My World ↗</a>
-    </section>
-
-    <section class="section" id="about">
-      <h2>About <span>Me.</span></h2>
-      <p>
+<section class="section reveal" id="about">
+  <div class="about-grid">
+    <div>
+      <div class="section-label">01 / ABOUT ME</div>
+      <h2 class="section-title">Curiosity Creates <span>Possibilities.</span></h2>
+      <p class="section-desc">
         I am AlAMIN, an aspiring AI & Creative Developer
-        passionate about technology, digital creativity
-        and building innovative projects.
+        passionate about artificial intelligence, technology
+        and digital creativity. I enjoy exploring new ideas
+        and learning how to turn them into real projects.
       </p>
-    </section>
+    </div>
+    <div class="about-card">
+      <h3>Beyond the Ordinary.</h3>
+      <p>
+        My journey is about learning, experimenting and
+        building a creative digital future.
+      </p>
+      <div style="margin-top:22px">
+        <span class="about-tag">AI & Technology</span>
+        <span class="about-tag">Digital Creativity</span>
+        <span class="about-tag">Innovation</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="section" id="contact">
-      <h2>Let's <span>Connect.</span></h2>
-      <p>Have an idea or project? Let's create something meaningful.</p>
-    </section>
-  </main>
+<section class="section reveal" id="skills">
+  <div class="section-label">02 / MY INTERESTS</div>
+  <h2 class="section-title">What I <span>Explore.</span></h2>
+  <p class="section-desc">
+    Areas I am passionate about and continuously learning.
+  </p>
 
-  <footer>
-    © 2026 AlAMIN. All Rights Reserved.
-  </footer>
+  <div class="skills-grid">
+    <div class="skill">
+      <div class="skill-icon">✳</div>
+      <h3>Artificial Intelligence</h3>
+      <p>Exploring AI tools, intelligent systems and emerging technology.</p>
+    </div>
+    <div class="skill">
+      <div class="skill-icon">◇</div>
+      <h3>Web Technology</h3>
+      <p>Learning modern web development and interactive digital experiences.</p>
+    </div>
+    <div class="skill">
+      <div class="skill-icon">✧</div>
+      <h3>Creative Design</h3>
+      <p>Exploring visual design, minimal interfaces and creative concepts.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="projects">
+  <div class="section-label">03 / SELECTED WORK</div>
+  <h2 class="section-title">Ideas in <span>Progress.</span></h2>
+  <p class="section-desc">
+    A growing collection of concepts, experiments and digital projects.
+  </p>
+
+  <div class="project-grid">
+    <div class="project">
+      <div class="project-number">PROJECT / 01</div>
+      <h3>YOUR AI</h3>
+      <p>An AI platform concept exploring conversational technology and digital tools.</p>
+      <span class="project-status">In Development</span>
+    </div>
+    <div class="project">
+      <div class="project-number">PROJECT / 02</div>
+      <h3>Personal Portfolio</h3>
+      <p>A personal digital space combining technology, design and interactive visuals.</p>
+      <span class="project-status">Building Now</span>
+    </div>
+    <div class="project">
+      <div class="project-number">PROJECT / 03</div>
+      <h3>Creative Lab</h3>
+      <p>A space for future experiments in creative technology and digital ideas.</p>
+      <span class="project-status">Coming Soon</span>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="contact">
+  <div class="contact-box">
+    <div class="section-label">04 / GET IN TOUCH</div>
+    <h2 class="section-title">Let's Create <span>Something.</span></h2>
+    <p class="section-desc">
+      Have an interesting idea or want to connect?
+      Find me on GitHub and explore my work.
+    </p>
+    <a class="btn btn-primary"
+       href="https://github.com/nepsyp"
+       target="_blank" rel="noopener">
+       Visit My GitHub ↗
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="logo">Al<span>AMIN.</span></div>
+  <div>© 2026 AlAMIN. Built with curiosity.</div>
+</footer>
+
+<script type="module">
+import * as THREE from
+'https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js';
+
+const canvas = document.querySelector('#orb');
+
+try {
+  const scene = new THREE.Scene();
+
+  const camera = new THREE.PerspectiveCamera(
+    45, canvas.clientWidth / canvas.clientHeight, 0.1, 100
+  );
+  camera.position.z = 7;
+
+  const renderer = new THREE.WebGLRenderer({
+    canvas,
+    alpha: true,
+    antialias: true
+  });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+  const group = new THREE.Group();
+  scene.add(group);
+
+  const sphere = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(1.25, 2),
+    new THREE.MeshStandardMaterial({
+      color: 0xff792e,
+      emissive: 0x8d2600,
+      emissiveIntensity: 0.7,
+      metalness: 0.75,
+      roughness: 0.24,
+      wireframe: true
+    })
+  );
+  group.add(sphere);
+
+  const core = new THREE.Mesh(
+    new THREE.SphereGeometry(0.82, 32, 32),
+    new THREE.MeshBasicMaterial({
+      color: 0x34170c,
+      transparent: true,
+      opacity: 0.8
+    })
+  );
+  group.add(core);
+
+  for (let i = 0; i < 3; i++) {
+    const ring = new THREE.Mesh(
+      new THREE.TorusGeometry(1.75 + i * 0.16, 0.012, 8, 120),
+      new THREE.MeshBasicMaterial({
+        color: i === 1 ? 0xff792e : 0x9a451e,
+        transparent: true,
+        opacity: 0.75
+      })
+    );
+    ring.rotation.x = Math.PI / 2 + i * 0.5;
+    ring.rotation.y = i * 0.7;
+    group.add(ring);
+  }
+
+  const particlesGeometry = new THREE.BufferGeometry();
+  const positions = [];
+
+  for (let i = 0; i < 650; i++) {
+    positions.push(
+      (Math.random() - 0.5) * 12,
+      (Math.random() - 0.5) * 9,
+      (Math.random() - 0.5) * 7
+    );
+  }
+
+  particlesGeometry.setAttribute(
+    'position',
+    new THREE.Float32BufferAttribute(positions, 3)
+  );
+
+  const particles = new THREE.Points(
+    particlesGeometry,
+    new THREE.PointsMaterial({
+      color: 0xffa16c,
+      size: 0.018,
+      transparent: true,
+      opacity: 0.7
+    })
+  );
+  scene.add(particles);
+
+  scene.add(new THREE.AmbientLight(0xffffff, 1.2));
+
+  const light = new THREE.PointLight(0xff792e, 35);
+  light.position.set(3, 3, 4);
+  scene.add(light);
+
+  let targetX = 0;
+  let targetY = 0;
+
+  function pointerMove(x, y) {
+    targetY = (x / window.innerWidth - 0.5) * 0.6;
+    targetX = (y / window.innerHeight - 0.5) * 0.4;
+  }
+
+  window.addEventListener('pointermove', e => {
+    pointerMove(e.clientX, e.clientY);
+  });
+
+  window.addEventListener('touchmove', e => {
+    if (e.touches.length) {
+      pointerMove(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  }, {passive:true});
+
+  function resize() {
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+    if (!w || !h) return;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  }
+
+  window.addEventListener('resize', resize);
+
+  const reducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    if (!reducedMotion) {
+      group.rotation.y += 0.0025;
+      group.rotation.x += 0.001;
+      group.rotation.y += (targetY - group.rotation.y) * 0.018;
+      group.rotation.x += (targetX - group.rotation.x) * 0.018;
+      particles.rotation.y += 0.0003;
+    }
+
+    renderer.render(scene, camera);
+  }
+
+  resize();
+  animate();
+
+} catch (error) {
+  console.error('3D scene could not start:', error);
+}
+</script>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.12});
+
+document.querySelectorAll('.reveal').forEach(element => {
+  observer.observe(element);
+});
+</script>
 
 </body>
-  </html>
+</html>
